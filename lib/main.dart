@@ -64,6 +64,7 @@ class _ToDoListState extends State<ToDoList> {
       body: ListView.builder(
         itemCount: _tasks.length,
         itemBuilder: (BuildContext context, int index) {
+          _tasks.sort((a, b) => a.time.compareTo(b.time));
           return Dismissible(
             key: Key(_tasks[index].name),
             onDismissed: (direction) {
